@@ -1,0 +1,6 @@
+---
+# file: main.yml
+- import_playbook: netplan.yml
+- import_playbook: grafana.yml
+- import_playbook: docker.yml
+- import_playbook: docker_metabase.yml
