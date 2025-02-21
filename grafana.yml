@@ -6,8 +6,11 @@
   tasks:
     - name: update system
       ansible.builtin.apt:
-        name: "*"
-        state: latest
+        upgrade: yes
+        update_cache: yes
+        cache_valid_time: 86400 #One day
+
+        
     - name: Import Grafana GPG signing key [Debian/Ubuntu]
       apt_key:
         url: "https://packages.grafana.com/gpg.key"
