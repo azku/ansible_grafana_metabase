@@ -14,3 +14,6 @@ Ubuntu/Debian systeman Docker instalatzeko biltegi (repository) berria gehitu be
 
 ## Metabase (Docker barruan)
 Docker instalatuta dagoela baliatuz, metabase eta postgres kontenedore bana abiatzen dira. Metabase 3001 atakan ezartzen da, 3000 atakan Grafana egotea espero delako.
+
+## Exekuzioa
+`` ansible-playbook -i inventory.ini main.yml --ask-become-pass``
