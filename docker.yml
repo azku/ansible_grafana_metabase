@@ -5,6 +5,7 @@
   become_user: root
   vars:
     ansible_user: "ir_inf"
+    home_path: "/home/ir_inf"
 
   tasks:
     #packages already updated
@@ -52,6 +53,7 @@
         - containerd.io
         - docker-buildx-plugin
         - docker-compose-plugin
+        - docker-compose
 
     - name: Add Docker group
       ansible.builtin.group:
@@ -73,3 +75,9 @@
         - docker.service
         - containerd.service
 
+    - name: Docker compose fitxategia kopiatu
+      copy:
+        src: templates/docker-compose.yaml
+        dest: "{{ home_path }}/metabase_docker/"
+        owner: ir_inf
+        group: ir_inf
