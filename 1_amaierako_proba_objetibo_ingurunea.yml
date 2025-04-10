@@ -77,9 +77,9 @@
         - docker.service
         - containerd.service
 
-    - name: Docker compose desberdinek erabiliko duten sare komuna sortu
-      docker_network:
-        name: "proba_objetiboa"
+    # - name: Docker compose desberdinek erabiliko duten sare komuna sortu
+    #   docker_network:
+    #     name: "proba_objetiboa"
 
     - name: Docker compose fitxategia kopiatu Metabaserako
       copy:
@@ -88,15 +88,15 @@
         owner: ir_inf
         group: ir_inf
 
-    - name: Zihurtatu helburu direktorioa existitzen dala
-      file:
-        path: "{{ home_path }}/postgresql_docker"
-        state: directory
+    # - name: Zihurtatu helburu direktorioa existitzen dala
+    #   file:
+    #     path: "{{ home_path }}/postgresql_docker"
+    #     state: directory
         
-    - name: Docker compose fitxategia kopiatu PostgreSQLrako
-      copy:
-        src: templates/docker-compose_postgresql.yaml
-        dest: "{{ home_path }}/postgresql_docker/docker-compose.yaml"
-        owner: ir_inf
-        group: ir_inf
+    # - name: Docker compose fitxategia kopiatu PostgreSQLrako
+    #   copy:
+    #     src: templates/docker-compose_postgresql.yaml
+    #     dest: "{{ home_path }}/postgresql_docker/docker-compose.yaml"
+    #     owner: ir_inf
+    #     group: ir_inf
 

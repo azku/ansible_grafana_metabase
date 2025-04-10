@@ -34,5 +34,4 @@ volumes:
 networks:
   my-network:
     name: proba_objetiboa
-    external: true
     driver: bridge    
