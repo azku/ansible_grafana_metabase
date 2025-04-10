@@ -8,7 +8,8 @@ services:
       POSTGRES_PASSWORD: "abc1234"
     volumes:
       - postgres_data:/var/lib/postgresql/data
-
+    networks:
+      - my-network      
 
   metabase:
     image: metabase/metabase
@@ -24,6 +25,14 @@ services:
       - "3001:3000"
     depends_on:
       - postgres
-
+    networks:
+      - my-network
+      
 volumes:
   postgres_data:
+
+networks:
+  my-network:
+    name: proba_objetiboa
+    external: true
+    driver: bridge    

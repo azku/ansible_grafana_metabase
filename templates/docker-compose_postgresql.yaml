@@ -1,0 +1,27 @@
+services:
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: bigdata_2025
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    networks:
+      - my-network      
+ 
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+    networks:
+      - my-network
+ 
+volumes:
+  pgdata:
+
+networks:
+  my-network:
+    name: proba_objetiboa
+    external: true
+    driver: bridge
